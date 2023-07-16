@@ -26,21 +26,21 @@ function route($fallback)
             header('Location: index.php?p=home');
             exit();
         case 'submit':
-            return ['Submit a Ban', '/page.submit.php'];
+            return ['请求封禁', '/page.submit.php'];
         case 'banlist':
-            return ['Ban List', '/page.banlist.php'];
+            return ['封禁名单', '/page.banlist.php'];
         case 'commslist':
-            return ['Communications Block List', '/page.commslist.php'];
+            return ['禁言名单', '/page.commslist.php'];
         case 'servers':
-            return ['Server List', '/page.servers.php'];
+            return ['服务器列表', '/page.servers.php'];
         case 'protest':
-            return ['Protest a Ban', '/page.protest.php'];
+            return ['抗议封禁', '/page.protest.php'];
         case 'account':
             return ['Your Account', '/page.youraccount.php'];
         case 'lostpassword':
-            return ['Lost your password', '/page.lostpassword.php'];
+            return ['找回密码', '/page.lostpassword.php'];
         case 'home':
-            return ['Dashboard', '/page.home.php'];
+            return ['概览', '/page.home.php'];
         case 'admin':
             switch ($categorie) {
                 case 'groups':
@@ -114,19 +114,19 @@ function route($fallback)
             switch ($fallback) {
                 case 1:
                     $_GET['p'] = 'banlist';
-                    return ['Ban List', '/page.banlist.php'];
+                    return ['封禁名单', '/page.banlist.php'];
                 case 2:
                     $_GET['p'] = 'servers';
-                    return ['Server Info', '/page.servers.php'];
+                    return ['服务器信息', '/page.servers.php'];
                 case 3:
                     $_GET['p'] = 'submit';
-                    return ['Submit a Ban', '/page.submit.php'];
+                    return ['请求封禁', '/page.submit.php'];
                 case 4:
                     $_GET['p'] = 'protest';
-                    return ['Protest a Ban', '/page.protest.php'];
+                    return ['抗议封禁', '/page.protest.php'];
                 default:
                     $_GET['p'] = 'home';
-                    return ['Dashboard', '/page.home.php'];
+                    return ['概览', '/page.home.php'];
             }
     }
 }

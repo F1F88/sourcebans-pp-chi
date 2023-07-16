@@ -95,7 +95,9 @@ function KickPlayer($check, int $sid, $num, $type)
                 $GLOBALS['PDO']->execute();
 
                 $domain = Host::complete();
-                rcon("kickid $player[id] \"You have been banned by this server, check $domain for more info\"", $sid);
+                // ! Customized information
+                // rcon("kickid $player[id] \"你已被封禁, 更多信息请查阅: $domain\"", $sid);
+                rcon("kickid $player[id] \"你已被封禁, 详细原因请查看 http://52chye.cn:9912\"", $sid);
 
                 $objResponse->addAssign("srv_$num", "innerHTML", "<font color='green' size='1'><b><u>Player Found & Kicked!</u></b></font>");
                 $objResponse->addScript("set_counter('-1');");
@@ -110,7 +112,9 @@ function KickPlayer($check, int $sid, $num, $type)
                 $GLOBALS['PDO']->execute();
 
                 $domain = Host::complete();
-                rcon("kickid $player[id] \"You have been banned by this server, check $domain for more info\"", $sid);
+                // ! Customized information
+                // rcon("kickid $player[id] \"你已被封禁, 更多信息请查阅: $domain\"", $sid);
+                rcon("kickid $player[id] \"你已被封禁, 详细原因请查看 http://52chye.cn:9912\"", $sid);
 
                 $objResponse->addAssign("srv_$num", "innerHTML", "<font color='green' size='1'><b><u>Player Found & Kicked!</u></b></font>");
                 $objResponse->addScript("set_counter('-1');");

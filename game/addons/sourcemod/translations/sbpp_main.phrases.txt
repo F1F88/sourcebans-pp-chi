@@ -2,18 +2,19 @@
 {
 	"Banned Check Site"
 	{
+		// * Customized Fix Bug: 信息末尾有两个 '.', 看起来像是信息显示不完全
 		"#format"		"{1:s}"
 		"en"			"You have been banned from this server. Access {1} for more info."
 		"nl"			"U bent gebanned van deze server, kijk op {1} voor meer informatie."
 		"fr"			"Vous avez été banni de ce serveur, allez sur {1} pour plus d'informations."
 		"pl"			"Zostałeś zbanowany na tym serwerze, odwiedź {1} aby poznać szczegóły."
 		"pt"			"Você foi banido(a) deste servidor. Acesse {1} para mais informações."
-		"de"			"Sie wurden von diesem Server gebannt, weitere Informationen auf {1}."
-		"ru"			"Вы были забанены на этом сервере, для получения информации посетите: {1}."
+		"de"			"Sie wurden von diesem Server gebannt, weitere Informationen auf {1}"
+		"ru"			"Вы были забанены на этом сервере, для получения информации посетите: {1}"
 		"da"			"Du er blevet udlukket fra denne server, check {1} for mere info."
 		"no"			"Du har blitt stengt ute fra denne serveren, sjekk {1} for mer info."
 		"hu"			"Bannolva vagy erről a szerverről, látogass el {1} honlapra a további információkért."
-		"chi"			"你已被此服务器封禁, 详情请参阅: {1}."
+		"chi"			"你已被此服务器封禁, 详情请参阅: {1}"
 		"tr"			"Sunucuya girişiniz yasaklandı. Detaylı bilgi için {1} adresini ziyaret ediniz."
 	}
 	"Ban Not Verified"

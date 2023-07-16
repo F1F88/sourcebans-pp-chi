@@ -3,7 +3,7 @@ global $theme;
 
 $breadcrumb = [
     [
-        'title' => 'Home',
+        'title' => '首页',
         'url' => 'index.php?p=home'
     ],
     [

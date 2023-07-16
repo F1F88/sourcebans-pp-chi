@@ -209,11 +209,11 @@ if (isset($_GET["hideinactive"]) && $_GET["hideinactive"] == "true") { // hide
     //ShowBox('Show inactive bans', 'Inactive bans will be shown in the banlist.', 'green', 'index.php?p=banlist', true);
 }
 if (isset($_SESSION["hideinactive"])) {
-    $hidetext      = "Show";
+    $hidetext      = "显示";
     $hideinactive  = " AND RemoveType IS NULL";
     $hideinactiven = " WHERE RemoveType IS NULL";
 } else {
-    $hidetext      = "Hide";
+    $hidetext      = "隐藏";
     $hideinactive  = "";
     $hideinactiven = "";
 }
@@ -700,16 +700,16 @@ if ($BansEnd < $BanCount) {
         if (!isset($nxt)) {
             $nxt = "";
         }
-        $next = CreateLinkR('next <i class="fas fa-arrow-right fa-lg"></i>', "javascript:void(0);", "", "_self", false, $nxt);
+        $next = CreateLinkR('下一页 <i class="fas fa-arrow-right fa-lg"></i>', "javascript:void(0);", "", "_self", false, $nxt);
     } else {
-        $next = CreateLinkR('next <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=banlist&page=" . ($page + 1) . (isset($_GET['searchText']) ? "&searchText=" . $_GET['searchText'] : '' . $advSearchString));
+        $next = CreateLinkR('下一页 <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=banlist&page=" . ($page + 1) . (isset($_GET['searchText']) ? "&searchText=" . $_GET['searchText'] : '' . $advSearchString));
     }
 } else {
     $next = "";
 }
 
 //=================[ Start Layout ]==================================
-$ban_nav = 'displaying&nbsp;' . $BansStart . '&nbsp;-&nbsp;' . $BansEnd . '&nbsp;of&nbsp;' . $BanCount . '&nbsp;results';
+$ban_nav = '显示&nbsp;' . $BansStart . '&nbsp;-&nbsp;' . $BansEnd . '&nbsp;of&nbsp;' . $BanCount . '&nbsp;总数';
 
 if (strlen($prev) > 0) {
     $ban_nav .= ' | <b>' . $prev . '</b>';

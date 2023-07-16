@@ -343,7 +343,7 @@ function AddGroup($name, $type, $bitmask, $srvflags)
         // add the web group
         $query1 = $GLOBALS['db']->Execute(
             "INSERT INTO `" . DB_PREFIX
-            . "_groups` (`gid`, `type`, `name`, `flags`) 
+            . "_groups` (`gid`, `type`, `name`, `flags`)
             VALUES (" . (int)($query['next_gid'] + 1) . ", '" . (int)$type . "', ?, '" . (int)$bitmask . "')",
             array($name)
         );
@@ -1525,13 +1525,13 @@ function ServerHostPlayers($sid, $type="servers", $obId="", $tplsid="", $open=""
                             );
                             if ($userbank->HasAccess(ADMIN_OWNER|ADMIN_ADD_BAN)) {
                                 $objResponse->addScript(
-                                    'AddContextMenu("#player_s'.$sid.'p'.$player["Id"].'", "contextmenu", true, "Player Commands", [
-                                    {name: "Kick", callback: function(){KickPlayerConfirm('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 0);}},
-                                    {name: "Block Comms", callback: function(){window.location = "index.php?p=admin&c=comms&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
-                                    {name: "Ban", callback: function(){window.location = "index.php?p=admin&c=bans&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
+                                    'AddContextMenu("#player_s'.$sid.'p'.$player["Id"].'", "contextmenu", true, "玩家指令", [
+                                    {name: "踢出服务器", callback: function(){KickPlayerConfirm('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 0);}},
+                                    {name: "禁止聊天/语音", callback: function(){window.location = "index.php?p=admin&c=comms&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
+                                    {name: "禁止加入", callback: function(){window.location = "index.php?p=admin&c=bans&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
                                     {separator: true},
-                                    '.(ini_get('safe_mode')==0 ? '{name: "View Profile", callback: function(){ViewCommunityProfile('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'")}},':'').'
-                                    {name: "Send Message", callback: function(){OpenMessageBox('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 1)}}
+                                    '.(ini_get('safe_mode')==0 ? '{name: "查看个人资料", callback: function(){ViewCommunityProfile('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'")}},':'').'
+                                    {name: "发送私人消息", callback: function(){OpenMessageBox('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 1)}}
                                 ]);'
                                 );
                             }

@@ -1,3 +1,6 @@
+## [点此查看：汉化说明](./Chinesization.md)
+
+
 <h1 align="center">
     <a href="https://sbpp.github.io"><img src="https://raw.githubusercontent.com/sbpp/sourcebans-pp/v1.x/.github/logo.png" height="25%" width="25%"/></a>
     <br/>
@@ -37,7 +40,7 @@ or read how to report issues effectively [here](https://coenjacobs.me/2013/12/06
 
 ## How to install a SourceBans++ release version
 
-The easiest way of installing SourceBans++ is to use a [release version](https://github.com/sbpp/sourcebans-pp/releases), since 
+The easiest way of installing SourceBans++ is to use a [release version](https://github.com/sbpp/sourcebans-pp/releases), since
 those come bundled with all requiered code dependencies and pre-compiled sourcemod plugins.
 
 The [quickstart](https://sbpp.github.io/docs/quickstart/) guide gives you a detailed walktrough of the installation process.
@@ -63,12 +66,12 @@ Upgrading from 1.6/1.7, requires a new [configuration value](/blob/php81/web/con
 Once done, delete it, as it may output sensitive information.
 
 #### Smarty
-#### Updated Smarty version dropped support for the `{php}` tag. 
+#### Updated Smarty version dropped support for the `{php}` tag.
 Custom themes must to use the new [`{load_template}`](https://github.com/sbpp/sourcebans-pp/blob/php81/web/includes/SmartyCustomFunctions.php#L54) tag.
 
 #### JWT Update
 *If you ran the installer or upgrade file, this step is unecessary.* \
-JWT secrets are no longer stored in the database as they are generated using a secret key. 
+JWT secrets are no longer stored in the database as they are generated using a secret key.
 
 
 ### Compiling SourceMod plugins

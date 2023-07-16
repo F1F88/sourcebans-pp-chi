@@ -32,9 +32,9 @@ new AdminTabs([
 ], $userbank, $theme);
 
 if (isset($_GET['mode']) && $_GET['mode'] == "delete") {
-    echo "<script>ShowBox('Ban Deleted', 'The ban has been deleted from SourceBans', 'green', '', true);</script>";
+    echo "<script>ShowBox('删除封禁', '该封禁已从 Sourcebans 中删除', 'green', '', true);</script>";
 } elseif (isset($_GET['mode']) && $_GET['mode']=="unban") {
-    echo "<script>ShowBox('Player Unbanned', 'The Player has been unbanned from SourceBans', 'green', '', true);</script>";
+    echo "<script>ShowBox('玩家解封', '这名玩家已被 Sourcebans 解封', 'green', '', true);</script>";
 }
 
 if (isset($GLOBALS['IN_ADMIN'])) {
@@ -152,12 +152,12 @@ if ($page > 1) {
     $prev = "";
 }
 if ($PageEnd < $page_count) {
-    $next = CreateLinkR('next <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=admin&c=bans&ppage=" . ($page + 1) . "#^1");
+    $next = CreateLinkR('下一页 <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=admin&c=bans&ppage=" . ($page + 1) . "#^1");
 } else {
     $next = "";
 }
 
-$page_nav = 'displaying&nbsp;' . $PageStart . '&nbsp;-&nbsp;' . $PageEnd . '&nbsp;of&nbsp;' . $page_count . '&nbsp;results';
+$page_nav = '显示&nbsp;' . $PageStart . '&nbsp;-&nbsp;' . $PageEnd . '&nbsp;of&nbsp;' . $page_count . '&nbsp;总数';
 
 if (strlen($prev) > 0) {
     $page_nav .= ' | <b>' . $prev . '</b>';
@@ -301,12 +301,12 @@ if ($page > 1) {
     $prev = "";
 }
 if ($PageEnd < $page_count) {
-    $next = CreateLinkR('next <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=admin&c=bans&papage=" . ($page + 1) . "#^1~p1");
+    $next = CreateLinkR('下一页 <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=admin&c=bans&papage=" . ($page + 1) . "#^1~p1");
 } else {
     $next = "";
 }
 
-$page_nav = 'displaying&nbsp;' . $PageStart . '&nbsp;-&nbsp;' . $PageEnd . '&nbsp;of&nbsp;' . $page_count . '&nbsp;results';
+$page_nav = '显示&nbsp;' . $PageStart . '&nbsp;-&nbsp;' . $PageEnd . '&nbsp;of&nbsp;' . $page_count . '&nbsp;总数';
 
 if (strlen($prev) > 0) {
     $page_nav .= ' | <b>' . $prev . '</b>';
@@ -471,12 +471,12 @@ if ($page > 1) {
     $prev = "";
 }
 if ($PageEnd < $page_count) {
-    $next = CreateLinkR('next <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=admin&c=bans&spage=" . ($page + 1) . "#^2");
+    $next = CreateLinkR('下一页 <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=admin&c=bans&spage=" . ($page + 1) . "#^2");
 } else {
     $next = "";
 }
 
-$page_nav = 'displaying&nbsp;' . $PageStart . '&nbsp;-&nbsp;' . $PageEnd . '&nbsp;of&nbsp;' . $page_count . '&nbsp;results';
+$page_nav = '显示&nbsp;' . $PageStart . '&nbsp;-&nbsp;' . $PageEnd . '&nbsp;of&nbsp;' . $page_count . '&nbsp;总数';
 
 if (strlen($prev) > 0) {
     $page_nav .= ' | <b>' . $prev . '</b>';
@@ -605,12 +605,12 @@ if ($page > 1) {
     $prev = "";
 }
 if ($PageEnd < $page_count) {
-    $next = CreateLinkR('next <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=admin&c=bans&sapage=" . ($page + 1) . "#^2~s1");
+    $next = CreateLinkR('下一页 <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=admin&c=bans&sapage=" . ($page + 1) . "#^2~s1");
 } else {
     $next = "";
 }
 
-$page_nav = 'displaying&nbsp;' . $PageStart . '&nbsp;-&nbsp;' . $PageEnd . '&nbsp;of&nbsp;' . $page_count . '&nbsp;results';
+$page_nav = '显示&nbsp;' . $PageStart . '&nbsp;-&nbsp;' . $PageEnd . '&nbsp;of&nbsp;' . $page_count . '&nbsp;总数';
 
 if (strlen($prev) > 0) {
     $page_nav .= ' | <b>' . $prev . '</b>';

@@ -211,11 +211,11 @@ if (isset($_GET["hideinactive"]) && $_GET["hideinactive"] == "true") { // hide
     //ShowBox('Show inactive bans', 'Inactive bans will be shown in the banlist.', 'green', 'index.php?p=banlist', true);
 }
 if (isset($_SESSION["hideinactive"])) {
-    $hidetext      = "Show";
+    $hidetext      = "显示";
     $hideinactive  = " AND RemoveType IS NULL";
     $hideinactiven = " WHERE RemoveType IS NULL";
 } else {
-    $hidetext      = "Hide";
+    $hidetext      = "隐藏";
     $hideinactive  = "";
     $hideinactiven = "";
 }
@@ -464,9 +464,14 @@ while (!$res->EOF) {
     if (Config::getBool('banlist.hideadminname') && !$userbank->is_admin()) {
         $data['admin'] = false;
     } else {
-        $data['admin'] = stripslashes($res->fields['admin_name']);
+        // $data['admin'] = stripslashes($res->fields['admin_name']);
+        $data['admin'] = $res->fields['admin_name'] !== null ? stripslashes($res->fields['admin_name']) : "";
     }
-    $data['reason'] = stripslashes($res->fields['ban_reason']);
+    // $data['reason'] = stripslashes($res->fields['ban_reason']);
+    $data['reason'] = $res->fields['ban_reason'] !== null ? stripslashes($res->fields['ban_reason']) : "";
+    // * Customized Fix Bug:
+    // Deprecated: stripslashes(): Passing null to parameter #1 ($string) of type string is deprecated in C:\phpEnv\www\sourcebans-pp-chi\pages\page.commslist.php on line 467
+
 
     if ($res->fields['ban_length'] > 0) {
         $data['ban_length'] = SecondsToString(intval($res->fields['ban_length']));

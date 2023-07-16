@@ -3,3 +3,12 @@
 cache/*
 includes/vendor
 templates_c
+
+
+# Themes
+themes/sourcebans-web-theme-fluent
+themes/screenshots
+themes/.gitignore
+themes/.prettierrc
+themes/LICENSE.md
+themes/README.md

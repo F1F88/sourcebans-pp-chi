@@ -3,43 +3,43 @@ global $userbank, $theme;
 
 $navbar = [
      [
-        'title' => 'Dashboard',
+        'title' => '概览',
         'endpoint' => 'home',
         'description' => 'This page shows an overview of your bans and servers.',
         'permission' => true
     ],
     [
-        'title' => 'Servers',
+        'title' => '服务器列表',
         'endpoint' => 'servers',
         'description' => 'All of your servers and their status can be viewed here.',
         'permission' => true
     ],
     [
-        'title' => 'Bans',
+        'title' => '封禁名单',
         'endpoint' => 'banlist',
         'description' => 'All of the bans in the database can be viewed from here.',
         'permission' => true
     ],
     [
-        'title' => 'Comms',
+        'title' => '禁言名单',
         'endpoint' => 'commslist',
         'description' => 'All of the communication bans (such as chat gags and voice mutes) in the database can be viewed from here.',
         'permission' => Config::getBool('config.enablecomms')
     ],
     [
-        'title' => 'Report a Player',
+        'title' => '请求封禁',
         'endpoint' => 'submit',
         'description' => 'You can submit a demo or screenshot of a suspected cheater here. It will then be up for review by one of the admins.',
         'permission' => Config::getBool('config.enablesubmit')
     ],
     [
-        'title' => 'Appeal a Ban',
+        'title' => '抗议封禁',
         'endpoint' => 'protest',
         'description' => 'Here you can appeal your ban. And prove your case as to why you should be unbanned.',
         'permission' => Config::getBool('config.enableprotest')
     ],
     [
-        'title' => 'Admin Panel',
+        'title' => '管理面板',
         'endpoint' => 'admin',
         'description' => 'This is the control panel for SourceBans where you can setup new admins, add new server, etc.',
         'permission' => $userbank->is_admin()
@@ -48,37 +48,37 @@ $navbar = [
 
 $admin = [
     [
-        'title' => 'Admins',
+        'title' => '管理员列表',
         'endpoint' => 'admins',
         'permission' => ADMIN_OWNER|ADMIN_LIST_ADMINS|ADMIN_ADD_ADMINS|ADMIN_EDIT_ADMINS|ADMIN_DELETE_ADMINS
     ],
     [
-        'title' => 'Servers',
+        'title' => '服务器列表',
         'endpoint' => 'servers',
         'permission' => ADMIN_OWNER|ADMIN_LIST_SERVERS|ADMIN_ADD_SERVER|ADMIN_EDIT_SERVERS|ADMIN_DELETE_SERVERS
     ],
     [
-        'title' => 'Bans',
+        'title' => '封禁名单',
         'endpoint' => 'bans',
         'permission' => ADMIN_OWNER|ADMIN_ADD_BAN|ADMIN_EDIT_OWN_BANS|ADMIN_EDIT_GROUP_BANS|ADMIN_EDIT_ALL_BANS|ADMIN_BAN_PROTESTS|ADMIN_BAN_SUBMISSIONS
     ],
     [
-        'title' => 'Comms',
+        'title' => '禁言名单',
         'endpoint' => 'comms',
         'permission' => ADMIN_OWNER|ADMIN_ADD_BAN|ADMIN_EDIT_OWN_BANS|ADMIN_EDIT_ALL_BANS
     ],
     [
-        'title' => 'Groups',
+        'title' => '组',
         'endpoint' => 'groups',
         'permission' => ADMIN_OWNER|ADMIN_LIST_GROUPS|ADMIN_ADD_GROUP|ADMIN_EDIT_GROUPS|ADMIN_DELETE_GROUPS
     ],
     [
-        'title' => 'Settings',
+        'title' => '设置',
         'endpoint' => 'settings',
         'permission' => ADMIN_OWNER|ADMIN_WEB_SETTINGS
     ],
     [
-        'title' => 'Mods',
+        'title' => '模组/游戏',
         'endpoint' => 'mods',
         'permission' => ADMIN_OWNER|ADMIN_LIST_MODS|ADMIN_ADD_MODS|ADMIN_EDIT_MODS|ADMIN_DELETE_MODS
     ]

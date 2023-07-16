@@ -51,32 +51,32 @@ if (!isset($_POST['subban']) || $_POST['subban'] != 1) {
     $validsubmit   = true;
     $errors        = "";
     if ((strlen($SteamID) != 0 && $SteamID != "STEAM_0:") && !\SteamID\SteamID::isValidID($SteamID)) {
-        $errors .= '* Please type a valid STEAM ID.<br>';
+        $errors .= '* 请填写正确的 SteamID <br>';
         $validsubmit = false;
     }
     if (strlen($BanIP) != 0 && !filter_var($BanIP, FILTER_VALIDATE_IP)) {
-        $errors .= '* Please type a valid IP-address.<br>';
+        $errors .= '* 请填写正确的 IP 地址<br>';
         $validsubmit = false;
     }
     if (strlen($PlayerName) == 0) {
-        $errors .= '* You must include a player name<br>';
+        $errors .= '* 必须填写举报的玩家名称<br>';
         $validsubmit = false;
     }
     if (strlen($BanReason) == 0) {
-        $errors .= '* You must include comments<br>';
+        $errors .= '* 必须填写举报该玩家的原因<br>';
         $validsubmit = false;
     }
     if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-        $errors .= '* You must include a valid email address<br>';
+        $errors .= '* 请填写正确的邮箱地址<br>';
         $validsubmit = false;
     }
     if ($SID == -1) {
-        $errors .= '* Please select a server.<br>';
+        $errors .= '* 请选择一个服务器<br>';
         $validsubmit = false;
     }
     if (!empty($_FILES['demo_file']['name'])) {
         if (!checkExtension($_FILES['demo_file']['name'], ['zip', 'rar', 'dem', '7z', 'bz2', 'gz'])) {
-            $errors .= '* A demo can only be a dem, zip, rar, 7z, bz2 or a gz filetype.<br>';
+            $errors .= '* Demo 文件只能是以 dem、zip、rar、7z、bz2、gz 结尾的文件类型<br>';
             $validsubmit = false;
         }
     }
@@ -85,7 +85,7 @@ if (!isset($_POST['subban']) || $_POST['subban'] != 1) {
     ));
     $numcheck = $checkres->RecordCount();
     if ($numcheck == 1 && $checkres->fields['length'] == 0) {
-        $errors .= '* The player is already banned permanent.<br>';
+        $errors .= '* 该玩家已被永久封禁<br>';
         $validsubmit = false;
     }
 
@@ -188,9 +188,9 @@ if (!isset($_POST['subban']) || $_POST['subban'] != 1) {
                 ]);
             }
 
-            print "<script>ShowBox('Successful', 'Your submission has been added into the database, and will be reviewed by one of our admins.', 'green');</script>";
+            print "<script>ShowBox('Successful', '举报信息提交成功，我们会尽快审核，处理结果将发送到您的邮箱', 'green');</script>";
         } else {
-            print "<script>ShowBox('Error', 'There was an error uploading your demo to the server. Please try again later.', 'red');</script>";
+            print "<script>ShowBox('Error', '上传 Demo 到服务器时出现错误，请稍后再试', 'red');</script>";
             Log::add("e", "Demo Upload Failed", "A demo failed to upload for a submission from ($Email)");
         }
     }

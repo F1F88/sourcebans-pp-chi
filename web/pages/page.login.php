@@ -57,9 +57,9 @@ HTML;
             echo <<<HTML
     			<script>
     				ShowBox(
-                        'Error',
-    					'The username or password you supplied was incorrect.<br \>'+
-                        'If you have forgotten your password, use the <a href="$lostpassword_url">Lost Password</a> link.',
+                        '错误',
+    					'账号或密码错误<br \>'+
+                        '如果忘记密码，请点击 <a href="$lostpassword_url">忘记密码</a> 链接',
     					'red', '', false
     				);
     			</script>
@@ -70,8 +70,8 @@ HTML;
             echo <<<HTML
                 <script>
                     ShowBox(
-                        'Error',
-                        'Steam login was sucessful, but your SteamID isn\'t associated with any account.',
+                        '错误',
+                        'steam 账号登录成功，但您的 stedam 账号没有与任何 sourcebans 账号关联',
                         'red', '', false
                     );
                 </script>
