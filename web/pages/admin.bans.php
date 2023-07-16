@@ -157,7 +157,7 @@ if ($PageEnd < $page_count) {
     $next = "";
 }
 
-$page_nav = '显示&nbsp;' . $PageStart . '&nbsp;-&nbsp;' . $PageEnd . '&nbsp;of&nbsp;' . $page_count . '&nbsp;总数';
+$page_nav = '显示&nbsp;' . $PageStart . '&nbsp;-&nbsp;' . $PageEnd . ' | &nbsp;总数:&nbsp;' . $BanCount . '&nbsp;';
 
 if (strlen($prev) > 0) {
     $page_nav .= ' | <b>' . $prev . '</b>';

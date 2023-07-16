@@ -492,7 +492,7 @@ while (!$res->EOF) {
         $data['admin'] = stripslashes($res->fields['admin_name']);
     }
     $data['reason']     = stripslashes($res->fields['ban_reason']);
-    $data['ban_length'] = $res->fields['ban_length'] == 0 ? 'Permanent' : SecondsToString(intval($res->fields['ban_length']));
+    $data['ban_length'] = $res->fields['ban_length'] == 0 ? '永久' : SecondsToString(intval($res->fields['ban_length']));
 
     // Custom "listtable_1_banned" & "listtable_1_permanent" addition entries
     // Comment the 14 lines below out if they cause issues
@@ -514,11 +514,11 @@ while (!$res->EOF) {
         $data['class']    = "listtable_1_unbanned";
 
         if ($res->fields['row_type'] == "D") {
-            $data['ub_reason'] = "(Deleted)";
+            $data['ub_reason'] = "(已删除)";
         } elseif ($res->fields['row_type'] == "U") {
-            $data['ub_reason'] = "(Unbanned)";
+            $data['ub_reason'] = "(已解封)";
         } else {
-            $data['ub_reason'] = "(Expired)";
+            $data['ub_reason'] = "(已到期)";
         }
 
         $data['ureason'] = stripslashes($res->fields['unban_reason'] ?? '');
@@ -572,7 +572,7 @@ while (!$res->EOF) {
     if ($res->fields['history_count'] > 1) {
         $data['prevoff_link'] = $res->fields['history_count'] . " " . CreateLinkR("(search)", "index.php?p=banlist&searchText=" . ($data['type'] == 0 ? $data['steamid'] : $res->fields['ban_ip']) . "&Submit");
     } else {
-        $data['prevoff_link'] = "No previous bans";
+        $data['prevoff_link'] = "没有历史封禁记录";
     }
 
 
@@ -709,7 +709,7 @@ if ($BansEnd < $BanCount) {
 }
 
 //=================[ Start Layout ]==================================
-$ban_nav = '显示&nbsp;' . $BansStart . '&nbsp;-&nbsp;' . $BansEnd . '&nbsp;of&nbsp;' . $BanCount . '&nbsp;总数';
+$ban_nav = '显示&nbsp;' . $BansStart . '&nbsp;-&nbsp;' . $BansEnd . ' | &nbsp;总数 &nbsp;' . $BanCount . '&nbsp;';
 
 if (strlen($prev) > 0) {
     $ban_nav .= ' | <b>' . $prev . '</b>';

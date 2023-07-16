@@ -477,7 +477,7 @@ while (!$res->EOF) {
         $data['ban_length'] = SecondsToString(intval($res->fields['ban_length']));
         $data['expires']    = Config::time($res->fields['ban_ends']);
     } else if ($res->fields['ban_length'] == 0) {
-        $data['ban_length'] = 'Permanent';
+        $data['ban_length'] = '永久';
         $data['expires']    = 'never';
     } else {
         $data['ban_length'] = 'Session';
@@ -490,11 +490,11 @@ while (!$res->EOF) {
         $data['class']    = "listtable_1_unbanned";
 
         if ($res->fields['row_type'] == "D") {
-            $data['ub_reason'] = "(Deleted)";
+            $data['ub_reason'] = "(已删除)";
         } elseif ($res->fields['row_type'] == "U") {
-            $data['ub_reason'] = "(Unbanned)";
+            $data['ub_reason'] = "(已解封)";
         } else {
-            $data['ub_reason'] = "(Expired)";
+            $data['ub_reason'] = "(已到期)";
         }
 
         if (isset($res->fields['unban_reason']))
@@ -505,7 +505,8 @@ while (!$res->EOF) {
         if (isset($removedby[0]) && $data['admin']) {
             $data['removedby'] = $removedby[0];
         }
-    } else if ($data['ban_length'] == 'Permanent') {
+    } else if ($data['ban_length'] == '永久') {
+        $data['unbanned']  = false;     //  * Customized Fix Bug : Warning: Undefined array key "unbanned" in D:\Data\Code\SourcePawn\Git\sourcebans-pp-chi\web\templates_c\sourcebans_web_theme_fluent^a1b16e460b9df6c630c8a8bcd9b226b11680ce12_0.file.page_comms.tpl.php on line 192
         $data['class'] = "listtable_1_permanent";
     } else {
         $data['unbanned']  = false;
@@ -560,7 +561,7 @@ while (!$res->EOF) {
     if ($history_count > 1) {
         $data['prevoff_link'] = $history_count . " " . CreateLinkR("(search)", "index.php?p=commslist&searchText=" . $data['steamid'] . "&Submit");
     } else {
-        $data['prevoff_link'] = "No previous blocks";
+        $data['prevoff_link'] = "没有历史封禁记录";
     }
 
     $mutes = "";
@@ -665,16 +666,16 @@ if ($BansEnd < $BanCount) {
         if (!isset($nxt)) {
             $nxt = "";
         }
-        $next = CreateLinkR('next <i class="fas fa-arrow-right fa-lg"></i>', "javascript:void(0);", "", "_self", false, $nxt);
+        $next = CreateLinkR('下一页 <i class="fas fa-arrow-right fa-lg"></i>', "javascript:void(0);", "", "_self", false, $nxt);
     } else {
-        $next = CreateLinkR('next <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=commslist&page=" . ($page + 1) . (isset($_GET['searchText']) ? "&searchText=" . $_GET['searchText'] : '' . $advSearchString));
+        $next = CreateLinkR('下一页 <i class="fas fa-arrow-right fa-lg"></i>', "index.php?p=banlist&page=" . ($page + 1) . (isset($_GET['searchText']) ? "&searchText=" . $_GET['searchText'] : '' . $advSearchString));
     }
 } else {
     $next = "";
 }
 
 //=================[ Start Layout ]==================================
-$ban_nav = 'displaying&nbsp;' . $BansStart . '&nbsp;-&nbsp;' . $BansEnd . '&nbsp;of&nbsp;' . $BanCount . '&nbsp;results';
+$ban_nav = '显示&nbsp;' . $BansStart . '&nbsp;-&nbsp;' . $BansEnd . ' | &nbsp;总数 &nbsp;' . $BanCount . '&nbsp;';
 
 if (strlen($prev) > 0) {
     $ban_nav .= ' | <b>' . $prev . '</b>';

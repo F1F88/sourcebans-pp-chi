@@ -141,7 +141,7 @@ function SecondsToString($sec, $textual=true)
     }
     if ($textual) {
         $div = array( 2592000, 604800, 86400, 3600, 60, 1 );
-        $desc = array('mo','wk','d','hr','min','sec');
+        $desc = array('月','星期','天','小时','分钟','秒');
         $ret = null;
         foreach ($div as $index => $value) {
             $quotent = floor($sec / $value); //greatest whole integer
