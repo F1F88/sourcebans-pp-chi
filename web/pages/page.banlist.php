@@ -492,7 +492,7 @@ while (!$res->EOF) {
         $data['admin'] = stripslashes($res->fields['admin_name']);
     }
     $data['reason']     = stripslashes($res->fields['ban_reason']);
-    $data['ban_length'] = $res->fields['ban_length'] == 0 ? '永久' : SecondsToString(intval($res->fields['ban_length']));
+    $data['ban_length'] = $res->fields['ban_length'] == 0 ? 'Permanent' : SecondsToString(intval($res->fields['ban_length']));
 
     // Custom "listtable_1_banned" & "listtable_1_permanent" addition entries
     // Comment the 14 lines below out if they cause issues
@@ -572,7 +572,7 @@ while (!$res->EOF) {
     if ($res->fields['history_count'] > 1) {
         $data['prevoff_link'] = $res->fields['history_count'] . " " . CreateLinkR("(search)", "index.php?p=banlist&searchText=" . ($data['type'] == 0 ? $data['steamid'] : $res->fields['ban_ip']) . "&Submit");
     } else {
-        $data['prevoff_link'] = "没有历史记录";
+        $data['prevoff_link'] = "No previous bans";
     }
 
 
@@ -593,7 +593,7 @@ while (!$res->EOF) {
     if ($res->fields['demo_count'] == 0) {
         $data['demo_available'] = false;
         $data['demo_quick']     = 'N/A';
-        $data['demo_link']      = CreateLinkR('<i class="fas fa-video-slash fa-lg"></i> 没有 Demo', "#");
+        $data['demo_link']      = CreateLinkR('<i class="fas fa-video-slash fa-lg"></i> No Demos', "#");
     } else {
         $data['demo_available'] = true;
         $data['demo_quick']     = CreateLinkR('Demo', "getdemo.php?type=B&id=" . $data['ban_id']);
@@ -661,7 +661,7 @@ while (!$res->EOF) {
                 $commentres->MoveNext();
             }
         } else {
-            $comment = "无";
+            $comment = "None";
         }
 
         $data['commentdata'] = $comment;
@@ -709,7 +709,7 @@ if ($BansEnd < $BanCount) {
 }
 
 //=================[ Start Layout ]==================================
-$ban_nav = '显示&nbsp;' . $BansStart . '&nbsp;-&nbsp;' . $BansEnd . '&nbsp;总数:&nbsp;' . $BanCount . '&nbsp;';
+$ban_nav = '显示&nbsp;' . $BansStart . '&nbsp;-&nbsp;' . $BansEnd . '&nbsp;of&nbsp;' . $BanCount . '&nbsp;总数';
 
 if (strlen($prev) > 0) {
     $ban_nav .= ' | <b>' . $prev . '</b>';

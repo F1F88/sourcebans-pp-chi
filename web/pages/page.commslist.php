@@ -674,7 +674,7 @@ if ($BansEnd < $BanCount) {
 }
 
 //=================[ Start Layout ]==================================
-$ban_nav = '显示&nbsp;' . $BansStart . '&nbsp;-&nbsp;' . $BansEnd . '&nbsp;总数:&nbsp;' . $BanCount . '&nbsp;';
+$ban_nav = 'displaying&nbsp;' . $BansStart . '&nbsp;-&nbsp;' . $BansEnd . '&nbsp;of&nbsp;' . $BanCount . '&nbsp;results';
 
 if (strlen($prev) > 0) {
     $ban_nav .= ' | <b>' . $prev . '</b>';

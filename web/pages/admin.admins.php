@@ -191,7 +191,7 @@ if ($AdminsEnd < $admin_count) {
 }
 
 //=================[ Start Layout ]==================================
-$admin_nav = '显示&nbsp;' . $AdminsStart . '&nbsp;-&nbsp;' . $AdminsEnd . '&nbsp;总数:&nbsp;' . $admin_count . '&nbsp;';
+$admin_nav = 'displaying&nbsp;' . $AdminsStart . '&nbsp;-&nbsp;' . $AdminsEnd . '&nbsp;of&nbsp;' . $admin_count . '&nbsp;results';
 
 if (strlen($prev) > 0) {
     $admin_nav .= ' | <b>' . $prev . '</b>';
