@@ -38,9 +38,9 @@
                             <td align="center" class="listtable_1" ><input id="date" type="radio" name="search_type" value="radiobutton"></td>
                             <td class="listtable_1" >Date</td>
                             <td class="listtable_1" >
-                                <input class="textbox" type="text" id="day" value="DD" onmouseup="$('date').checked = true" maxlength="2" style="width: 22%;">
-                                <input class="textbox" type="text" id="month" value="MM" onmouseup="$('date').checked = true" maxlength="2" style="width: 22%;">
-                                <input class="textbox" type="text" id="year" value="YY" onmouseup="$('date').checked = true" maxlength="4" style="width: 24%;">
+                                <input class="textbox" type="text" id="year" value="年" onmouseup="$('date').checked = true" maxlength="4" style="width: 24%;">
+                                <input class="textbox" type="text" id="month" value="月" onmouseup="$('date').checked = true" maxlength="2" style="width: 22%;">
+                                <input class="textbox" type="text" id="day" value="日" onmouseup="$('date').checked = true" maxlength="2" style="width: 22%;">
                             </td>
                         </tr>
                         <tr>
@@ -135,7 +135,7 @@
 					<td class="listtable_1" >Server</td>
 			        <td class="listtable_1" >
 						<select class="select" id="server" onmouseup="$('where_banned').checked = true" style="width: 95%;">
-						<option label="Web Ban" value="0">Web Ban</option>
+						<option label="Web Ban" value="0">网站封禁</option>
 							{foreach from=$server_list item="server"}
 								<option value="{$server.sid}" id="ss{$server.sid}">Retrieving Hostname... ({$server.ip}:{$server.port})</option>
 							{/foreach}
