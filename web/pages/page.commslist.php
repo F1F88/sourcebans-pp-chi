@@ -449,7 +449,7 @@ while (!$res->EOF) {
             $gag_count         = $gag_count - 1;
             break;
         default:
-            $data['type_icon'] = '<img src="images/country/zz.jpg" alt="Unknown block type" border="0" align="absmiddle" />';
+            $data['type_icon'] = '<img src="images/country/zz.png" alt="Unknown block type" border="0" align="absmiddle" />';
             break;
     }
 
@@ -559,7 +559,7 @@ while (!$res->EOF) {
     $data['mod_icon'] = '<img src="images/games/' . $modicon . '" alt="MOD" border="0" align="absmiddle" />&nbsp;' . $data['type_icon'];
 
     if ($history_count > 1) {
-        $data['prevoff_link'] = $history_count . " " . CreateLinkR("(search)", "index.php?p=commslist&searchText=" . $data['steamid'] . "&Submit");
+        $data['prevoff_link'] = $history_count . " " . CreateLinkR("&nbsp;(search)", "index.php?p=commslist&searchText=" . $data['steamid'] . "&Submit");
     } else {
         $data['prevoff_link'] = "没有历史封禁记录";
     }
