@@ -30,9 +30,9 @@ if (isset($_GET['m'])) {
             echo <<<HTML
 				<script>
 					ShowBox(
-						'Error - No Access',
-						'You dont have permission to access this page.<br />' +
-						'Please login with an account that has access.',
+						'错误 - 没有权限',
+						'您没有访问此页面的权限。<br />' +
+						'请使用具有访问权限的帐户登录。',
 						'red', '', false
 					);
 				</script>
@@ -43,10 +43,10 @@ HTML;
             echo <<<HTML
 				<script>
 					ShowBox(
-						'Information',
-						'You are unable to login because your account have an empty password set.<br />' +
-						'Please <a href="$lostpassword_url">restore your password</a> or ask an admin to do that for you.<br />' +
-						'Do note that you are required to have a non empty password set event if you sign in through Steam.',
+						'提示',
+						'无法登录，因为您的帐户密码设置为空。<br />' +
+						'点击 <a href="$lostpassword_url">找回密码</a> 或寻求管理员帮助。<br />' +
+						'注意，如果使用Steam登录，需要为账号设置一个非空密码。',
 						'blue', '', true
 					);
 				</script>

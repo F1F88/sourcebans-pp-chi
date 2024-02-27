@@ -1527,11 +1527,11 @@ function ServerHostPlayers($sid, $type="servers", $obId="", $tplsid="", $open=""
                                 $objResponse->addScript(
                                     'AddContextMenu("#player_s'.$sid.'p'.$player["Id"].'", "contextmenu", true, "玩家指令", [
                                     {name: "踢出服务器", callback: function(){KickPlayerConfirm('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 0);}},
-                                    {name: "禁止聊天/语音", callback: function(){window.location = "index.php?p=admin&c=comms&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
-                                    {name: "禁止加入", callback: function(){window.location = "index.php?p=admin&c=bans&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
+                                    {name: "禁言", callback: function(){window.location = "index.php?p=admin&c=comms&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
+                                    {name: "封禁", callback: function(){window.location = "index.php?p=admin&c=bans&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
                                     {separator: true},
-                                    '.(ini_get('safe_mode')==0 ? '{name: "查看个人资料", callback: function(){ViewCommunityProfile('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'")}},':'').'
-                                    {name: "发送私人消息", callback: function(){OpenMessageBox('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 1)}}
+                                    '.(ini_get('safe_mode')==0 ? '{name: "查看资料", callback: function(){ViewCommunityProfile('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'")}},':'').'
+                                    {name: "发送悄悄话", callback: function(){OpenMessageBox('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 1)}}
                                 ]);'
                                 );
                             }

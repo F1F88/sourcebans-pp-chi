@@ -33,7 +33,7 @@ $navbar = [
         'permission' => Config::getBool('config.enablesubmit')
     ],
     [
-        'title' => '抗议封禁',
+        'title' => '请求解封',
         'endpoint' => 'protest',
         'description' => 'Here you can appeal your ban. And prove your case as to why you should be unbanned.',
         'permission' => Config::getBool('config.enableprotest')
